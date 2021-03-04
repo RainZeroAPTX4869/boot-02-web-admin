@@ -45,15 +45,8 @@ public class IndexController {
      * @return
      */
     @GetMapping("/main.html")
-    public String mainPage(HttpSession session, Model model) {
-//        拦截器过滤器，判断是否登录
-        Object loginUser = session.getAttribute("loginUser");
-        if (loginUser != null) {
-            return "main";
-        } else {
-            model.addAttribute("msg", "请先登录");
-            return "login";
-        }
+    public String mainPage() {
+        return "main";
 
     }
 }
