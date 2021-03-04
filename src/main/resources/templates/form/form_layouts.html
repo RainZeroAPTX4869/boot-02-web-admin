@@ -46,7 +46,7 @@
                             Basic Forms
                         </header>
                         <div class="panel-body">
-                            <form role="form">
+                            <form role="form" th:action="@{/upload}" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">邮件地址</label>
                                     <input type="email" class="form-control" id="exampleInputEmail1"
