@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://119.29.6.138:9090/mysql
+    username: sdzy_root
+    password: asdzy_DB_123
+    druid:
+      filters: stat,wall
+      aop-patterns: com.rain.admin.*
+      stat-view-servlet:
+        enabled: true
+      web-stat-filter:
+        enabled: true
+
+
