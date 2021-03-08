@@ -64,7 +64,6 @@
                                         <th>门店编号</th>
                                         <th>名店名称</th>
                                         <th>MAC地址</th>
-                                        <th>门店ID</th>
                                         <th>状态</th>
                                     </tr>
                                     </thead>
@@ -73,7 +72,6 @@
                                         <td th:text="${mac.storecode}"></td>
                                         <td th:text="${mac.storename}"></td>
                                         <td th:text="${mac.macid}"></td>
-                                        <td th:text="${mac.storeid}"></td>
                                         <td th:if="${mac.status} eq 1">激活</td>
                                         <td th:if="${mac.status} ne 1">未激活</td>
                                     </tr>
