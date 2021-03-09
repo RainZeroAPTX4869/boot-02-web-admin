@@ -1,5 +1,6 @@
 package com.rain.admin.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.rain.admin.bean.BaseStoreMac;
 import com.rain.admin.bean.User;
 import com.rain.admin.service.TableService;
@@ -7,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,9 +30,12 @@ public class TableController {
     }
 
     @GetMapping("dynamic_table")
-    public String dynamicTable(Model model) {
-        List<BaseStoreMac> baseStoreMacList = tableService.list();
-        model.addAttribute("baseStoreMac",baseStoreMacList);
+    public String dynamicTable(@RequestParam(value = "pn", defaultValue = "1") Integer pn, Model model) {
+//        List<BaseStoreMac> baseStoreMacList = tableService.list();
+//        model.addAttribute("baseStoreMac",baseStoreMacList);
+        Page<BaseStoreMac> baseStoreMacPage = new Page<>(pn, 10);
+        Page<BaseStoreMac> page = tableService.page(baseStoreMacPage, null);
+        model.addAttribute("page", page);
         return "table/dynamic_table";
     }
 

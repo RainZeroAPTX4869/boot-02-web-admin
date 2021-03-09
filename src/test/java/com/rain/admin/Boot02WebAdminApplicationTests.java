@@ -3,6 +3,7 @@ package com.rain.admin;
 import com.rain.admin.bean.BaseStoreMac;
 import com.rain.admin.dao.TableMapper;
 import org.junit.jupiter.api.Test;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
