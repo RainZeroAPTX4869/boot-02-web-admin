@@ -2,7 +2,6 @@ package com.rain.admin.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.rain.admin.bean.BaseStoreMac;
-import org.springframework.stereotype.Service;
 
 /**
  * Created with IntelliJ IDEA.

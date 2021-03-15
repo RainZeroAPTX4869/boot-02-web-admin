@@ -49,6 +49,17 @@ public class BaseStoreMac implements Serializable {
     */
     private String remark;
 
+    public BaseStoreMac(String id, String storeid, String storecode, String storename, String macid, Integer status, Date createdate, Date modifydate, String remark) {
+        this.id = id;
+        this.storeid = storeid;
+        this.storecode = storecode;
+        this.storename = storename;
+        this.macid = macid;
+        this.status = status;
+        this.createdate = createdate;
+        this.modifydate = modifydate;
+        this.remark = remark;
+    }
 
     public String getId() {
         return id;
