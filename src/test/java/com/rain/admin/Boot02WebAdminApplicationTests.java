@@ -2,9 +2,11 @@ package com.rain.admin;
 
 import com.rain.admin.bean.BaseStoreMac;
 import com.rain.admin.dao.TableMapper;
+import com.rain.admin.utils.RedisUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
@@ -18,6 +20,9 @@ class Boot02WebAdminApplicationTests {
 
     @Autowired
     TableMapper tableMapper;
+
+    @Autowired
+    RedisUtil redisUtil;
 
     @Test
     void contextLoads() {
@@ -35,6 +40,11 @@ class Boot02WebAdminApplicationTests {
         baseStoreMacList.forEach(System.out::println);
 
 
+    }
+
+    @Test
+    void redisTest(){
+        System.out.println(redisUtil.get("111"));
     }
 
 }
